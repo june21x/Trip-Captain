@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "807964387011",
+    "firebase_url": "https://trip-captain.firebaseio.com",
+    "project_id": "trip-captain",
+    "storage_bucket": "trip-captain.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807964387011:android:0dfd8820d5032ff39ea476",
+        "android_client_info": {
+          "package_name": "com.june.tripcaptain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807964387011-tv7c5tvqup09f6bhojmcmphmbovd144r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO7ITzXGxF29pBS_uD_4aaGyCfC2COIP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807964387011-tv7c5tvqup09f6bhojmcmphmbovd144r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
