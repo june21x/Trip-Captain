@@ -17,8 +17,6 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.june.tripcaptain.Adapter.ViewPagerAdapter;
-import com.june.tripcaptain.DataClass.Category;
-import com.june.tripcaptain.DataClass.News;
 import com.june.tripcaptain.Helper.CubeInDepthTransformation;
 import com.june.tripcaptain.Helper.GlideApp;
 
@@ -36,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private FragmentActivity mFragmentActivity;
     private ArrayList<String> mFragmentTitles = new ArrayList<>();
-    private ArrayList<News> mNewsList = new ArrayList<>();
-    private ArrayList<Category> mCategoryList = new ArrayList<>();
     private ImageView ivProfile;
     private static String TAG = "Debug";
 
@@ -66,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPager2);
         viewPager2.setPageTransformer(new CubeInDepthTransformation());
         viewPager2.setUserInputEnabled(false);
-        viewPagerAdapter = new ViewPagerAdapter(mContext, mFragmentActivity, mNewsList);
+        viewPagerAdapter = new ViewPagerAdapter(mContext, mFragmentActivity);
         viewPager2.setAdapter(viewPagerAdapter);
         new TabLayoutMediator(tabLayout, viewPager2,
                 (tab, position) -> tab.setText(mFragmentTitles.get(position))).attach();

@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,18 +13,14 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.june.tripcaptain.Adapter.CategoryAdapter;
 import com.june.tripcaptain.Adapter.PlaceAdapter;
 import com.june.tripcaptain.DataClass.Category;
 import com.june.tripcaptain.DataClass.Place;
 import com.june.tripcaptain.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -202,9 +197,9 @@ public class RecommendationsFragment extends Fragment {
                                 e.printStackTrace();
                             }
                             JSONArray types = result.getJSONArray("types");
-                            Double rating = null;
+                            Float rating = null;
                             try {
-                                rating = result.getDouble("rating");
+                                rating = ((Double)result.getDouble("rating")).floatValue();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -284,9 +279,9 @@ public class RecommendationsFragment extends Fragment {
                                 e.printStackTrace();
                             }
                             JSONArray types = result.getJSONArray("types");
-                            Double rating = null;
+                            Float rating = null;
                             try {
-                                rating = result.getDouble("rating");
+                                rating = ((Double)result.getDouble("rating")).floatValue();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

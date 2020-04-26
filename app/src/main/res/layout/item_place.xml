@@ -1,50 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:layout_marginTop="50dp"
-    android:layout_marginBottom="50dp">
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp"
+    android:backgroundTint="@color/colorPrimaryDarka50"
+    app:cardCornerRadius="10dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Place Image"
+        android:id="@+id/ivImage" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRating"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:foregroundGravity="center"
+        android:id="@+id/rating"
+        android:numStars="5"
+        android:rating="3"
+        android:progressTint="@color/colorPrimaryLight"
+        android:progressBackgroundTint="@color/colorPrimaryLighta30"
+        android:scaleX="0.3"
+        android:scaleY="0.3"
+        android:outlineAmbientShadowColor="#00000000"
+        android:outlineSpotShadowColor="#00000000"
+        android:translationX="50dp"
+        android:translationY="-6dp"
+        android:translationZ="5dp"
+        android:isIndicator="true"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/colorPrimaryLighta50"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:id="@+id/cvOpenNow">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvOpenNow"
+            android:text="OPEN"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"/>
+
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryLighta30">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Place Image"
-            android:id="@+id/ivImage" />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:text="Place Name"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_vertical"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/colorPrimaryLight">
-
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="200dp"
-                android:layout_height="30dp"
-                android:text="Place Name"
-                android:textSize="24sp"
-                android:textColor="#FFFFFF"
-                android:layout_margin="10dp"
-                android:layout_gravity="center_vertical"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:id="@+id/btnAddToTrip"
-                android:layout_gravity="center_vertical|end"
-                android:text="ADD TO TRIP" />
-
-        </LinearLayout>
+            android:layout_margin="5dp"
+            android:id="@+id/btnAddToTrip"
+            android:layout_gravity="center_vertical|end"
+            android:text="ADD TO TRIP" />
 
     </LinearLayout>
 

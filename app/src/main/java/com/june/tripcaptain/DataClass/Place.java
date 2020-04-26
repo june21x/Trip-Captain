@@ -4,11 +4,11 @@ public class Place {
     private String placeID;
     private String name;
     private Boolean openNow;
-    private Double rating;
+    private Float rating;
     private int priceLevel;
     private String photoRef;
 
-    public Place(String placeID, String name, Boolean openNow, Double rating, int priceLevel, String photoRef) {
+    public Place(String placeID, String name, Boolean openNow, Float rating, int priceLevel, String photoRef) {
         this.placeID = placeID;
         this.name = name;
         this.openNow = openNow;
@@ -41,11 +41,11 @@ public class Place {
         this.openNow = openNow;
     }
 
-    public Double getRating() {
+    public Float getRating() {
         return rating;
     }
 
-    public void setRating(Double rating) {
+    public void setRating(Float rating) {
         this.rating = rating;
     }
 

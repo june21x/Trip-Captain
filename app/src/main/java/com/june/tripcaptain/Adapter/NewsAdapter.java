@@ -15,7 +15,6 @@ import com.june.tripcaptain.DataClass.News;
 import com.june.tripcaptain.Helper.GlideApp;
 import com.june.tripcaptain.NewsActivity;
 import com.june.tripcaptain.R;
-
 import java.util.ArrayList;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
@@ -74,8 +73,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
         tvTitle.setText(mNewsList.get(position).getTitle());
-        if(mNewsList.get(position).getContent().length() > 50) {
-            tvSubtitle.setText(mNewsList.get(position).getContent().substring(0, 50) + "...");
+        if(mNewsList.get(position).getContent().length() > 80) {
+            tvSubtitle.setText(mNewsList.get(position).getContent().substring(0, 80) + "...");
         }else {
             tvSubtitle.setText(mNewsList.get(position).getContent());
         }

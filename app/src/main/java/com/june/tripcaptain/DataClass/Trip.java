@@ -11,6 +11,11 @@ public class Trip {
         this.id = id;
     }
 
+    public Trip() {
+        this.placeList = new ArrayList<>();
+        this.id = "1";
+    }
+
     public ArrayList<Place> getPlaceList() {
         return placeList;
     }

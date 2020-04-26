@@ -4,18 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="fill_vertical">
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryLight"
+        android:text="TRIP 1"
+        android:layout_margin="10dp"
+        android:textSize="24sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTrip"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="680dp"/>
+        android:layout_height="400dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:gravity="center"
+        android:layout_gravity="bottom"
         android:orientation="horizontal">
 
         <Button
