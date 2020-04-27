@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MyTripFragment extends Fragment {
@@ -39,7 +40,7 @@ public class MyTripFragment extends Fragment {
     private ArrayList<Trip> mTripList;
     private static String TAG = "Debug";
     private static String MY_TRIP_FILE_NAME = "My_Trip";
-    private static String placesBaseURL = "https://maps.googleapis.com/maps/api/place/details/json?";
+    private static String detailsBaseURL = "https://maps.googleapis.com/maps/api/place/details/json?";
     private String APIkey;
     private RequestQueue queue;
     private JSONObject detailsJSON;
@@ -70,6 +71,11 @@ public class MyTripFragment extends Fragment {
         btnOpenMap = v.findViewById(R.id.btnOpenMap);
         btnOpenMap.setOnClickListener(v1 -> {
             Intent intent = new Intent(mContext, MapActivity.class);
+            ArrayList<String> placeIDList = new ArrayList<>();
+            for(Place place : mTripList.get(0).getPlaceList()) {
+                placeIDList.add(place.getPlaceID());
+            }
+            intent.putStringArrayListExtra("place_id", placeIDList);
             mContext.startActivity(intent);
         });
 
@@ -173,7 +179,7 @@ public class MyTripFragment extends Fragment {
     public String getPlaceDetailsURL(String placeID) {
         APIkey = mContext.getResources().getString(R.string.google_maps_key);
 
-        String detailsURL = placesBaseURL
+        String detailsURL = detailsBaseURL
                 + "place_id=" + placeID
                 + "&fields=name,opening_hours,rating,price_level,photo"
                 + "&key=" + APIkey;
